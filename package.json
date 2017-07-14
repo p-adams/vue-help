@@ -1,0 +1,19 @@
+{
+  "name": "vue-help",
+  "version": "1.0.0",
+  "description": "View Vue.js documentation in the terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-adams/vue-help.git"
+  },
+  "author": "Paul Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-adams/vue-help/issues"
+  },
+  "homepage": "https://github.com/p-adams/vue-help#readme"
+}

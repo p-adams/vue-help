@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/p-adams/vue-help/issues"
   },
-  "homepage": "https://github.com/p-adams/vue-help#readme"
+  "homepage": "https://github.com/p-adams/vue-help#readme",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  }
 }

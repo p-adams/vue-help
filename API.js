@@ -1,8 +1,9 @@
 const G_C = require('./globalconfig/globalconfig')
-const SILENT = G_C.SILENT
 
 const GlobalConfig = [
-    SILENT
+   G_C.SILENT,
+   G_C.OPTION_MERGE_STRATEGIES,
+   G_C.DEVTOOLS
 ]
 
 

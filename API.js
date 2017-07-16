@@ -1,4 +1,4 @@
-const G_C = require('./globalconfig/globalconfig')
+const G_C = require('./apis/globalconfig')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -7,7 +7,9 @@ const GlobalConfig = [
    G_C.ERROR_HANDLER,
    G_C.WARN_HANDLER,
    G_C.IGNORED_ELEMENTS,
-   G_C.KEY_CODES
+   G_C.KEY_CODES,
+   G_C.PERFORMANCE,
+   G_C.PRODUCTION_TIP
 ]
 
 

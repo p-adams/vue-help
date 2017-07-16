@@ -1,8 +1,9 @@
 const chalk = require('chalk')
+const custom = require('../customcolors')
+const colorComment = custom.colorComment
+const colorPrimitive = custom.colorPrimitive
+const colorError = custom.colorError
 
-colorComment = comment => chalk.gray(comment)
-
-colorPrimitive = primitive => chalk.magentaBright(primitive)
 
 const SILENT = {
         category: 'Global Config',
@@ -18,12 +19,12 @@ const OPTION_MERGE_STRATEGIES = {
         type: '{ [key: string]: Function }',
         default: '{}',
         usage: `Vue.config.optionMergeStrategies._my_option = ${chalk.magentaBright('function')}(parent,child,vm){
-                                ${chalk.magentaBright('return')} child + 1
+                                ${chalk.magentaBright('return')} child + ${colorPrimitive('1')}
                             }
                             ${chalk.magentaBright('const')} Profile = Vue.extend({
-                                 _my_option: 1
+                                 _my_option: ${colorPrimitive('1')}
                             })
-                            // Profile.options._my_option = 2\n`,
+                            ${colorComment("// Profile.options._my_option = 2")}\n`,
         details: `Define custom merging strategies for options.
                             The merge strategy receives the value of that option defined
                             on the parent and child instances as the first and second arguments,
@@ -34,7 +35,7 @@ const DEVTOOLS = {
         name: 'devtools', 
         type: 'boolean',
         default: `true ${chalk.white('(')} false ${chalk.white('in production builds)')}`,
-        usage: `// make sure to set this synchronously immediately after loading Vue
+        usage: `${colorComment("// make sure to set this synchronously immediately after loading Vue")}
                             Vue.config.devtools = ${chalk.magentaBright('true')}`,
         details: `Check whether to allow ${chalk.green('vue-devtools')} inspection.
                             This option's default value is ${chalk.magentaBright('true')} in development builds and ${chalk.magentaBright('false')} in production builds.
@@ -46,9 +47,9 @@ const ERROR_HANDLER = {
         type: 'Function',
         default: 'undefined',
         usage: `Vue.config.errorHandler = ${chalk.magentaBright('function')}(err,vm,info){
-                            // handle error
-                            // 'info' is a Vue-specific error info, e.g. which lifecycle hook
-                            // the error was found in. Only available in 2.2.0+
+                            ${colorComment("// handle error")}
+                            ${colorComment("// 'info' is a Vue-specific error info, e.g. which lifecycle hook")}
+                            ${colorComment("// the error was found in. Only available in 2.2.0+")}
                         }`,
         details: `Assign a handler for uncaught errors during component render function
                             and watchers. The handler gets called with the error and the Vue instance.`
@@ -59,8 +60,8 @@ const WARN_HANDLER = {
         name: 'warnHandler', 
         type: 'Function',
         default: 'undefined',
-        usage: `Vue.config.warnHandler = ${chalk.magentaBright('function')} (msg, vm, trace) {
-                            // trace is the component hierarchy trace
+        usage: `Vue.config.warnHandler = ${chalk.magentaBright('function')}(msg,vm,trace){
+                            ${colorComment("// trace is the component hierarchy trace")}
                         }`,
         details: `Assign a custom handler for runtime Vue warnings. Note this only works
                             during development and is ignored in production.`
@@ -75,7 +76,7 @@ const IGNORED_ELEMENTS = {
                             ]`,
         details: `Make Vue ignore custom elements defined outside of Vue
                             (e.g., using the Web Components APIs). Otherwise, it will throw
-                            a warning about an ${chalk.magentaBright('Unknown custom element')}, assuming that you forgot to 
+                            a warning about an ${colorError("Unknown custom element")}, assuming that you forgot to 
                             register a global component or misspelled a component name.`
 }
 
@@ -99,53 +100,26 @@ const KEY_CODES = {
         details: 'Define custom key alias(es) for v-on.'
 }
 
-/*const SILENT = {
+const PERFORMANCE = {
         category: 'Global Config',
-        name: '#silent', 
+        name: 'performance', 
         type: 'boolean',
-        default: 'false',
-        arguments: '',
-        readOption: '',
-        usage: `Vue.config.silent = ${chalk.magentaBright('true')}`,
-        details: 'Suppress all Vue logs and warnings',
-        example: ''
+        default: 'false (from 2.2.3)',
+        usage: `Vue.config.performance = ${chalk.magentaBright('true')}`,
+        details: `Set this to ${colorPrimitive("true")} to enable component init, compile,
+                            render, and patch performance in the browser devtool timeline.
+                            Only works in development mode and in browsers that support the
+                            ${chalk.green("performance.mark")} API.`,
 }
-const SILENT = {
+const PRODUCTION_TIP = {
         category: 'Global Config',
-        name: '#silent', 
+        name: 'productionTip', 
         type: 'boolean',
-        default: 'false',
-        arguments: '',
-        readOption: '',
-        usage: `Vue.config.silent = ${chalk.magentaBright('true')}`,
-        details: 'Suppress all Vue logs and warnings',
-        example: ''
+        default: 'true',
+        usage: `Vue.config.productionTip = ${chalk.magentaBright('false')}`,
+        details: `Set this to ${colorPrimitive("false")} to prevent the production
+                            tip on Vue startup.`
 }
-
-const SILENT = {
-        category: 'Global Config',
-        name: '#silent', 
-        type: 'boolean',
-        default: 'false',
-        arguments: '',
-        readOption: '',
-        usage: `Vue.config.silent = ${chalk.magentaBright('true')}`,
-        details: 'Suppress all Vue logs and warnings',
-        example: ''
-}
-
-const SILENT = {
-        category: 'Global Config',
-        name: '#silent', 
-        type: 'boolean',
-        default: 'false',
-        arguments: '',
-        readOption: '',
-        usage: `Vue.config.silent = ${chalk.magentaBright('true')}`,
-        details: 'Suppress all Vue logs and warnings',
-        example: ''
-}
-*/
 
 module.exports = {
     SILENT,
@@ -154,5 +128,7 @@ module.exports = {
     ERROR_HANDLER,
     WARN_HANDLER,
     IGNORED_ELEMENTS,
-    KEY_CODES
+    KEY_CODES,
+    PERFORMANCE,
+    PRODUCTION_TIP
 }

@@ -37,3 +37,15 @@ V.command('warnHandler', 'Outputs').action(function(args, callback){
     this.log(LGC.logGlobalConfig(warnHandler))
     callback()
 })
+
+V.command('ignoredElements', 'Outputs').action(function(args, callback){
+    const ignoredElements = gc[5]
+    this.log(LGC.logGlobalConfig(ignoredElements))
+    callback()
+})
+
+V.command('keyCodes', 'Outputs').action(function(args, callback){
+    const keyCodes = gc[6]
+    this.log(LGC.logGlobalConfig(keyCodes))
+    callback()
+})

@@ -1,5 +1,6 @@
 const V = require('vorpal')()
-
+const AB = require('./APIBuilder')
+console.log(AB)
 
 
 V.delimiter('vue-help$').show()

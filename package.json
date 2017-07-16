@@ -18,5 +18,8 @@
   "homepage": "https://github.com/p-adams/vue-help#readme",
   "dependencies": {
     "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "chalk": "^2.0.1"
   }
 }

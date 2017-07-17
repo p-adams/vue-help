@@ -17,7 +17,9 @@ const GlobalAPI = [
     G_API.EXTEND,
     G_API.NEXT_TICK,
     G_API.SET,
-    G_API.DELETE
+    G_API.DELETE,
+    G_API.DIRECTIVE,
+    G_API.FILTER
 ]
 
 

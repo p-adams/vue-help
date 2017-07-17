@@ -1,7 +1,6 @@
 const chalk = require('chalk')
 const custom = require('../customcolors')
 const colorComment = custom.colorComment
-const colorPrimitive = custom.colorPrimitive
 const colorError = custom.colorError
 const colorArgs = custom.colorArgs
 
@@ -85,10 +84,43 @@ const DELETE = {
 }
 
 const DIRECTIVE = {
-
+    category: 'Global API',
+    name: 'Vue.directive(id,[definition])',
+    arguments: [
+        `{string} id`,
+        `{Function | Object} [definition]`
+    ],
+    usage: `Register or retrieve a global directive`,
+    example: `${colorComment('// register')}
+                        Vue.directive(${chalk.green("'my-directive'")}, {
+                            bind: ${chalk.blue('function')} () {},
+                            inserted: ${chalk.blue('function')} () {},
+                            update: ${chalk.blue('function')} () {},
+                            componentUpdated: ${chalk.blue('function')} () {},
+                            unbind: ${chalk.blue('function')} () {},
+                        })
+                        ${colorComment('// register (simple function directive')}
+                        Vue.directive(${chalk.green("'my-directive'")}, ${chalk.blue('function')} () {
+                            ${colorComment('// this will be called as `bind` and `update`')}
+                        })
+                        ${colorComment(` getter, return the directive definition if registered`)}
+                        ${colorArgs('var')} myDirective = Vue.directive(${chalk.green("'my-directive'")})`
 }
 
 const FILTER = {
+    category: 'Global API',
+    name: 'Vue.filter(id,[definition])',
+    arguments:[
+        `{string} id`,
+        `{Function} [definition]`
+    ],
+    usage: `Register or retrieve a global filter.`,
+    example: `${colorComment('// register')}
+                        Vue.filter(${chalk.green("'my-filter'")}, ${chalk.blue('function')} (value){
+                            ${colorComment('// return processed value')}
+                        })
+                        ${colorComment('// getter, return the filter is registered')}
+                        ${colorArgs('var')} myFilter = Vue.filter(${chalk.green("'my-filter'")})`
 
 }
 
@@ -116,5 +148,7 @@ module.exports = {
     EXTEND,
     NEXT_TICK,
     SET,
-    DELETE
+    DELETE,
+    DIRECTIVE,
+    FILTER
 }

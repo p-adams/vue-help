@@ -88,3 +88,15 @@ V.command('delete', 'Outputs "Global API: #Vue.delete(target,key)"').action(func
     this.log(LGA.logGlobalAPI(dlt))
     callback()
 })
+
+V.command('directive', 'Outputs "Global API: #Vue.directive(id,[definition])"').action(function(args, callback){
+    const dir = ga[4]
+    this.log(LGA.logGlobalAPI(dir))
+    callback()
+})
+
+V.command('filter', 'Outputs "Global API: #Vue.filter(id,[definition])"').action(function(args, callback){
+    const flt = ga[5]
+    this.log(LGA.logGlobalAPI(flt))
+    callback()
+})

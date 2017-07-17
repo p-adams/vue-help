@@ -7,9 +7,9 @@ module.exports = {
                 `
                     ${chalk.green('Category:')} ${obj.category}
                     ${chalk.green('Name:')} ${obj.name + '\n'}
-                    * Arguments: 
+                    * Arguments (${obj.arguments.length}): 
                         ${obj.arguments.map((arg, index) => {
-                            return `${index+1} ${args(arg)} `
+                            return `${index+1}: ${args(arg)} `
                         }).join(" ")}
                     ${obj.returns ? `* Returns: ${obj.returns}` : ''}
                     * Usage: ${obj.usage}

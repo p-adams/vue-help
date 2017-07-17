@@ -35,14 +35,52 @@ const EXTEND = {
 }
 
 const NEXT_TICK = {
-
+    category: 'Global API',
+    name: 'Vue.nextTick([callback, context])',
+    arguments: [
+        `{Function} [callback]`,
+        `{Object} [context]`
+    ],
+    usage: `Defer the callback to be executed after the next DOM update cycle.
+                        Use it immediately after you've changed some data to wait
+                        for the DOM update.`,
+    example: `${colorComment('// modify data')}
+                        vm.msg = ${chalk.green("'Hello'")}
+                        Vue.nextTick(${chalk.blue('function')} () {
+                            ${colorComment('// DOM update')}
+                        })`
 }
 
 const SET = {
-
+    category: 'Global API',
+    name: 'Vue.set(target,key,value)',
+    arguments:[
+        `{Object | Array} target`,
+        `{string | number} key`,
+        `{any} value`
+    ],
+    returns: 'the set value',
+    usage: `Set a property on an object. If the object is reactive, ensure
+                        the property is created as a reactive property and
+                        trigger view updates. This is primarily used to get around
+                        the limitation that Vue cannot detect property additions.
+                        ${chalk.redBright.bold(`Note the object cannot be a Vue instance, or the root data
+                        object of a Vue instance.`)}`
 }
 
 const DELETE = {
+    category: 'Global API',
+    name: 'Vue.delete(target,key)',
+    arguments: [
+        `{Object | Array} target`,
+        `{string | number} key`
+    ],
+    usage: `Delete a property on an object. If the object is reactive, ensure the
+                        deletion triggers view updates. This is primarily used to get
+                        around the limitation that Vue cannot detect property deletions,
+                        but you should rarely need to use it.
+                        ${chalk.redBright.bold(`The target object cannot be a Vue instance, or the root data 
+                        object of a Vue instance.`)}`
 
 }
 
@@ -75,5 +113,8 @@ const VERSION = {
 }
 
 module.exports = {
-    EXTEND
+    EXTEND,
+    NEXT_TICK,
+    SET,
+    DELETE
 }

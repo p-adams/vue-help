@@ -66,7 +66,25 @@ V.command('productionTip', 'Outputs "Global Config: #productionTip"').action(fun
 // Global API
 
 V.command('extend', 'Outputs "Global API: #Vue.extend(options)"').action(function(args, callback){
-    const ex = ga[0]
-    this.log(LGA.logGlobalAPI(ex))
+    const ext = ga[0]
+    this.log(LGA.logGlobalAPI(ext))
+    callback()
+})
+
+V.command('nextTick', 'Outputs "Global API: #Vue.nextTick([callback,context])"').action(function(args, callback){
+    const nextTick = ga[1]
+    this.log(LGA.logGlobalAPI(nextTick))
+    callback()
+})
+
+V.command('set', 'Outputs "Global API: #Vue.set(target,key,value)"').action(function(args, callback){
+    const st = ga[2]
+    this.log(LGA.logGlobalAPI(st))
+    callback()
+})
+
+V.command('delete', 'Outputs "Global API: #Vue.delete(target,key)"').action(function(args, callback){
+    const dlt = ga[3]
+    this.log(LGA.logGlobalAPI(dlt))
     callback()
 })

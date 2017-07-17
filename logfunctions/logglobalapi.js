@@ -8,12 +8,12 @@ module.exports = {
                     ${chalk.green('Category:')} ${obj.category}
                     ${chalk.green('Name:')} ${obj.name + '\n'}
                     * Arguments: 
-                        ${obj.arguments.map(arg => {
-                            return `* ${args(arg)}`
-                        })}
-                    
+                        ${obj.arguments.map((arg, index) => {
+                            return `${index+1} ${args(arg)} `
+                        }).join(" ")}
+                    ${obj.returns ? `* Returns: ${obj.returns}` : ''}
                     * Usage: ${obj.usage}
-                    * Example: ${obj.example}
+                    ${obj.example ? `* Example: ${obj.example}` : ''} 
                 `
             )
     }

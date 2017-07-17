@@ -1,12 +1,13 @@
 const V = require('vorpal')()
 const LGC = require('./logfunctions/logglobalconfig')
+const LGA = require('./logfunctions/logglobalapi')
 const api = require('./API')
 const gc = api.GlobalConfig
-
+const ga = api.GlobalAPI
 
 V.delimiter('vue-help$').show()
 
-// Global Config API
+// Global Config
 
 V.command('silent', 'Outputs "Global Config: #silent"').action(function(args, callback){
     const silent= gc[0]
@@ -59,5 +60,13 @@ V.command('performance', 'Outputs "Global Config: #performance"').action(functio
 V.command('productionTip', 'Outputs "Global Config: #productionTip"').action(function(args, callback){
     const prod = gc[8]
     this.log(LGC.logGlobalConfig(prod))
+    callback()
+})
+
+// Global API
+
+V.command('extend', 'Outputs "Global API: #Vue.extend(options)"').action(function(args, callback){
+    const ex = ga[0]
+    this.log(LGA.logGlobalAPI(ex))
     callback()
 })

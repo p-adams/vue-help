@@ -1,4 +1,5 @@
 const G_C = require('./apis/globalconfig')
+const G_API = require('./apis/globalapi')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -12,7 +13,12 @@ const GlobalConfig = [
    G_C.PRODUCTION_TIP
 ]
 
+const GlobalAPI = [
+    G_API.EXTEND
+]
+
 
 module.exports = {
-    GlobalConfig
+    GlobalConfig,
+    GlobalAPI
 } 

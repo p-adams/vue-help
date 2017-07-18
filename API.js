@@ -19,7 +19,12 @@ const GlobalAPI = [
     G_API.SET,
     G_API.DELETE,
     G_API.DIRECTIVE,
-    G_API.FILTER
+    G_API.FILTER,
+    G_API.COMPONENT,
+    G_API.USE,
+    G_API.MIXIN,
+    G_API.COMPILE,
+    G_API.VERSION
 ]
 
 

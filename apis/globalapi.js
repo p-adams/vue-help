@@ -176,7 +176,8 @@ const COMPILE = {
     ],
     usage: `Compiles a template string into a render function. ${chalk.bold(`Only available
                         in the full build`)}.`,
-    example:`${colorArgs('var')} res = Vue.compile(${chalk.green("'<div><span>{{msg}}</span></div>'")})
+    example:`
+                        ${colorArgs('var')} res = Vue.compile(${chalk.green("'<div><span>{{msg}}</span></div>'")})
                         ${colorArgs('new')} Vue({
                             data: {
                                 msg: ${chalk.green("'hello'")}
@@ -194,7 +195,8 @@ const VERSION = {
     usage: `Provides the installed version of Vue as a string. This is
                         especially useful for community plugins and components,
                         where you might use different strategies for different versions.`,
-    example: `${colorArgs('var')} version = ${chalk.green('Number')}(Vue.version.split(${chalk.green("'.'")})[${colorPrimitive('0')}])
+    example: `
+                        ${colorArgs('var')} version = ${chalk.green('Number')}(Vue.version.split(${chalk.green("'.'")})[${colorPrimitive('0')}])
                         ${colorArgs('if')} (version === ${colorPrimitive('2')}) {
                             ${colorComment('// Vue v2.x.x')}
                         } ${colorArgs('else if')} (version === ${colorPrimitive('1')}) {
@@ -210,5 +212,10 @@ module.exports = {
     SET,
     DELETE,
     DIRECTIVE,
-    FILTER
+    FILTER,
+    COMPONENT,
+    USE,
+    MIXIN,
+    COMPILE,
+    VERSION
 }

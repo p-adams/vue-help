@@ -179,3 +179,21 @@ V.command('el', 'Options/DOM: #el').action(function(args, callback){
     this.log(O.logOptions(w))
     callback()
 })
+
+V.command('template', 'Options/DOM: #template').action(function(args, callback){
+    const w = odom[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('render', 'Options/DOM: #render').action(function(args, callback){
+    const w = odom[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('renderError', 'Options/DOM: #renderError').action(function(args, callback){
+    const w = odom[3]
+    this.log(O.logOptions(w))
+    callback()
+})

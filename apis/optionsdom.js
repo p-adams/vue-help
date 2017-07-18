@@ -24,7 +24,7 @@ const EL = {
                         Runtime + Compiler build of Vue should be used.`
                         ,
 }
-                    // untested
+                    
 const TEMPLATE = {
     category: 'Options/DOM',
     name: 'template',

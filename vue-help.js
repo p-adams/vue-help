@@ -7,6 +7,7 @@ const gc = api.GlobalConfig
 const ga = api.GlobalAPI
 const od = api.OptionsData
 const odom = api.OptionsDOM
+const olh = api.OptionsLifecycleHooks
 
 V.delimiter('vue-help$').show()
 
@@ -194,6 +195,68 @@ V.command('render', 'Options/DOM: #render').action(function(args, callback){
 
 V.command('renderError', 'Options/DOM: #renderError').action(function(args, callback){
     const w = odom[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+// Options/Lifecycle Hooks
+
+V.command('beforeCreate', 'Options/Lifecycle Hooks: #beforeCreate').action(function(args, callback){
+    const w = olh[0]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('created', 'Options/Lifecycle Hooks: #created').action(function(args, callback){
+    const w = olh[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('beforeMount', 'Options/Lifecycle Hooks: #beforeMount').action(function(args, callback){
+    const w = olh[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('mounted', 'Options/Lifecycle Hooks: #mounted').action(function(args, callback){
+    const w = olh[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('beforeUpdate', 'Options/Lifecycle Hooks: #beforeUpdate').action(function(args, callback){
+    const w = olh[4]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('updated', 'Options/Lifecycle Hooks: #updated').action(function(args, callback){
+    const w = olh[5]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('activated', 'Options/Lifecycle Hooks: #activated').action(function(args, callback){
+    const w = olh[6]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('deactivated', 'Options/Lifecycle Hooks: #deactivated').action(function(args, callback){
+    const w = olh[7]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('beforeDestroy', 'Options/Lifecycle Hooks: #beforeDestroy').action(function(args, callback){
+    const w = olh[8]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('destroyed', 'Options/Lifecycle Hooks: #destroyed').action(function(args, callback){
+    const w = olh[9]
     this.log(O.logOptions(w))
     callback()
 })

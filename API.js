@@ -2,6 +2,7 @@ const G_C = require('./apis/globalconfig')
 const G_API = require('./apis/globalapi')
 const O_D = require('./apis/optionsdata')
 const O_DOM = require('./apis/optionsdom')
+const O_LH = require('./apis/optionslifecyclehooks')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -45,10 +46,25 @@ const OptionsDOM = [
     O_DOM.RENDER_ERROR
 ]
 
+const OptionsLifecycleHooks = [
+    O_LH.BEFORE_CREATE,
+    O_LH.CREATED,
+    O_LH.BEFORE_MOUNT,
+    O_LH.MOUNTED,
+    O_LH.BEFORE_UPDATE,
+    O_LH.UPDATED,
+    O_LH.ACTIVATED,
+    O_LH.DEACTIVATED,
+    O_LH.BEFORE_DESTROY,
+    O_LH.DESTROYED
+
+]
+
 
 module.exports = {
     GlobalConfig,
     GlobalAPI,
     OptionsData,
-    OptionsDOM
+    OptionsDOM,
+    OptionsLifecycleHooks
 } 

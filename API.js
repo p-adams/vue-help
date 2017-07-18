@@ -40,5 +40,6 @@ const OptionsData = [
 
 module.exports = {
     GlobalConfig,
-    GlobalAPI
+    GlobalAPI,
+    OptionsData
 } 

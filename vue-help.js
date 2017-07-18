@@ -1,9 +1,11 @@
 const V = require('vorpal')()
 const LGC = require('./logfunctions/logglobalconfig')
 const LGA = require('./logfunctions/logglobalapi')
+const O = require('./logfunctions/logoptions')
 const api = require('./API')
 const gc = api.GlobalConfig
 const ga = api.GlobalAPI
+const od = api.OptionsData
 
 V.delimiter('vue-help$').show()
 
@@ -133,3 +135,38 @@ V.command('version', 'Global API: #Vue.version').action(function(args, callback)
 
 // Options/Data
 
+V.command('data', 'Options/Data: #data').action(function(args, callback){
+    const d = od[0]
+    this.log(O.logOptions(d))
+    callback()
+})
+
+V.command('props', 'Options/Data: #props').action(function(args, callback){
+    const p = od[1]
+    this.log(O.logOptions(p))
+    callback()
+})
+
+V.command('propsData', 'Options/Data: #propsData').action(function(args, callback){
+    const pd = od[2]
+    this.log(O.logOptions(pd))
+    callback()
+})
+
+V.command('computed', 'Options/Data: #computed').action(function(args, callback){
+    const c = od[3]
+    this.log(O.logOptions(c))
+    callback()
+})
+
+V.command('methods', 'Options/Data: #methods').action(function(args, callback){
+    const m = od[4]
+    this.log(O.logOptions(m))
+    callback()
+})
+
+V.command('watch', 'Options/Data: #watch').action(function(args, callback){
+    const w = od[5]
+    this.log(O.logOptions(w))
+    callback()
+})

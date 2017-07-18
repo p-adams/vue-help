@@ -1,5 +1,6 @@
 const G_C = require('./apis/globalconfig')
 const G_API = require('./apis/globalapi')
+const O_D = require('./apis/optionsdata')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -25,6 +26,15 @@ const GlobalAPI = [
     G_API.MIXIN,
     G_API.COMPILE,
     G_API.VERSION
+]
+
+const OptionsData = [
+    O_D.DATA,
+    O_D.PROPS,
+    O_D.PROPS_DATA,
+    O_D.COMPUTED,
+    O_D.METHODS,
+    O_D.WATCH
 ]
 
 

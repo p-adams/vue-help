@@ -125,7 +125,6 @@ const FILTER = {
 
 }
 
-// untested
 const COMPONENT = {
     category: 'Global API',
     name: 'Vue.component(id,[definition]',

@@ -1,6 +1,7 @@
 const chalk = require('chalk')
 const custom = require('../customcolors')
 const colorComment = custom.colorComment
+const colorPrimitive = custom.colorPrimitive
 const colorError = custom.colorError
 const colorArgs = custom.colorArgs
 
@@ -124,24 +125,83 @@ const FILTER = {
 
 }
 
+// untested
 const COMPONENT = {
-
+    category: 'Global API',
+    name: 'Vue.component(id,[definition]',
+    arguments:[
+        `{string} id`,
+        `{Function | Object} [definition]`
+    ],
+    usage: `Register or retrieve a global component. Registration also automatically sets
+                        the component's ${colorArgs('name')} with the given ${colorArgs('id')}.`,
+    example: `${colorComment('// register an extended constructor')}
+                        Vue.component(${chalk.green("'my-component'")}, Vue.extend({${colorComment(`/*...*/`)}}))
+                        ${colorComment('// register an options object {automatically call Vue.extend')})}
+                        Vue.component(${chalk.green("'my-component'")}, {${colorComment(`/*...*/`)}})
+                        ${colorComment('// retrieve a registered component (always return constructor)')}
+                        ${colorArgs('var')} MyComponent = Vue.component(${chalk.green("'my-component'")}`
 }
 
 const USE = {
-
+    category: 'Global API',
+    name: 'Vue.use(plugin)',
+    arguments: [
+        `{Object | Function} plugin`
+    ],
+    usage: `Install a Vue.js plugin. If the plugin is an Object, it must expose an
+                        ${colorArgs('install')} method. If it is a function itself,
+                        it will be treated as the install method. The install method
+                        will be called with Vue as the argument.
+                        When this method is called on the same plugin multiple times,
+                        the plugin will be installed only once.`
 }
 
 const MIXIN = {
-
+    category: 'Global API',
+    name: 'Vue.mixin(mixin)',
+    arguments:[
+        `{Object} mixin`,
+    ],
+    usage: `Apply a mixin globally, which affects every Vue instance created afterwards.
+                        This can be used by plugin authors to inject custom behavior into
+                        components. ${chalk.bold('Not recommended in application code.')}.`
 }
 
 const COMPILE = {
+    category: 'Global API',
+    name: 'Vue.compile(template)',
+    arguments:[
+        `{string} template`
+    ],
+    usage: `Compiles a template string into a render function. ${chalk.bold(`Only available
+                        in the full build`)}.`,
+    example:`${colorArgs('var')} res = Vue.compile(${chalk.green("'<div><span>{{msg}}</span></div>'")})
+                        ${colorArgs('new')} Vue({
+                            data: {
+                                msg: ${chalk.green("'hello'")}
+                            },
+                            render: res.render,
+                            staticRenderFns: res.staticRenderFns
+                        })`
 
 }
 
 const VERSION = {
-
+    category: 'Global API',
+    name: 'Vue.version',
+    arguments:[],
+    usage: `Provides the installed version of Vue as a string. This is
+                        especially useful for community plugins and components,
+                        where you might use different strategies for different versions.`,
+    example: `${colorArgs('var')} version = ${chalk.green('Number')}(Vue.version.split(${chalk.green("'.'")})[${colorPrimitive('0')}])
+                        ${colorArgs('if')} (version === ${colorPrimitive('2')}) {
+                            ${colorComment('// Vue v2.x.x')}
+                        } ${colorArgs('else if')} (version === ${colorPrimitive('1')}) {
+                            ${colorComment('// Vue.v1.x.x')}
+                        } ${colorArgs('else')} {
+                            ${colorComment('// Unsupported versions of Vue')}
+                        }`
 }
 
 module.exports = {

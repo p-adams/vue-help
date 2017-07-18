@@ -1,6 +1,7 @@
 const G_C = require('./apis/globalconfig')
 const G_API = require('./apis/globalapi')
 const O_D = require('./apis/optionsdata')
+const O_DOM = require('./apis/optionsdom')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -37,9 +38,17 @@ const OptionsData = [
     O_D.WATCH
 ]
 
+const OptionsDOM = [
+    O_DOM.EL,
+    O_DOM.TEMPLATE,
+    O_DOM.RENDER,
+    O_DOM.RENDER_ERROR
+]
+
 
 module.exports = {
     GlobalConfig,
     GlobalAPI,
-    OptionsData
+    OptionsData,
+    OptionsDOM
 } 

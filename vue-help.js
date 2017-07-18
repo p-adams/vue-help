@@ -6,6 +6,7 @@ const api = require('./API')
 const gc = api.GlobalConfig
 const ga = api.GlobalAPI
 const od = api.OptionsData
+const odom = api.OptionsDOM
 
 V.delimiter('vue-help$').show()
 
@@ -167,6 +168,14 @@ V.command('methods', 'Options/Data: #methods').action(function(args, callback){
 
 V.command('watch', 'Options/Data: #watch').action(function(args, callback){
     const w = od[5]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+// Options/DOM
+
+V.command('el', 'Options/DOM: #el').action(function(args, callback){
+    const w = odom[0]
     this.log(O.logOptions(w))
     callback()
 })

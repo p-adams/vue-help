@@ -1,7 +1,7 @@
 {
   "name": "vue-help",
   "version": "1.0.1",
-  "description": "View Vue.js documentation in the terminal",
+  "description": "Vue.js API in the terminal",
   "main": "vue-help.js",
   "scripts": {
     "vue-help": "node vue-help.js",

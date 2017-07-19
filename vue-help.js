@@ -466,3 +466,29 @@ V.command('vm.$delete', 'Instance Methods/Data: #vm.$delete(target,key)').action
 })
 
 // Instance Methods/Events
+
+V.command('vm.$on', 'Instance Methods/Events: #vm.$on(event,callback)').action(function(args, callback){
+    const w = im[0]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$once', 'Instance Methods/Events: #vm.$once(event,callback)').action(function(args, callback){
+    const w = im[1]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$off', 'Instance Methods/Events: #vm.$off([event,callback])').action(function(args, callback){
+    const w = im[2]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$emit', 'Instance Methods/Events: #vm.$delete(event,[...args])').action(function(args, callback){
+    const w = im[3]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+// Instance Methods/Lifecycle

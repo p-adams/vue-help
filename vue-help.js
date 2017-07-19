@@ -11,6 +11,7 @@ const olh = api.OptionsLifecycleHooks
 const oa = api.OptionsAssets
 const oc = api.OptionsComposition
 const om = api.OptionsMisc
+const ip = api.InstanceProperties
 
 V.delimiter('vue-help$').show()
 
@@ -356,6 +357,86 @@ V.command('inheritAttrs', 'Options/Misc: #inheritAttrs').action(function(args, c
 
 V.command('comments', 'Options/Misc: #comments').action(function(args, callback){
     const w = om[5]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+// Instance Properties
+
+V.command('vm.$data', 'Instance Properties: #vm.$data').action(function(args, callback){
+    const w = ip[0]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$props', 'Instance Properties: #vm.$props').action(function(args, callback){
+    const w = ip[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$el', 'Instance Properties: #vm.$el').action(function(args, callback){
+    const w = ip[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$options', 'Instance Properties: #vm.$options').action(function(args, callback){
+    const w = ip[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$parent', 'Instance Properties: #vm.$parent').action(function(args, callback){
+    const w = ip[4]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$root', 'Instance Properties: #vm.$root').action(function(args, callback){
+    const w = ip[5]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$children', 'Instance Properties: #vm.$children').action(function(args, callback){
+    const w = ip[6]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$slots', 'Instance Properties: #vm.$slots').action(function(args, callback){
+    const w = ip[7]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$scopedSlots', 'Instance Properties: #vm.$scopedSlots').action(function(args, callback){
+    const w = ip[8]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$refs', 'Instance Properties: #vm.$refs').action(function(args, callback){
+    const w = ip[9]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$isServer', 'Instance Properties: #vm.$isServer').action(function(args, callback){
+    const w = ip[10]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$attrs', 'Instance Properties: #vm.$attrs').action(function(args, callback){
+    const w = ip[11]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('vm.$listeners', 'Instance Properties: #vm.$listeners').action(function(args, callback){
+    const w = ip[12]
     this.log(O.logOptions(w))
     callback()
 })

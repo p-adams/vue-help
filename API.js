@@ -6,6 +6,7 @@ const O_LH = require('./apis/optionslifecyclehooks')
 const O_A = require('./apis/optionsassets')
 const O_C = require('./apis/optionscomposition')
 const O_M = require('./apis/optionsmisc')
+const I_P = require('./apis/instanceproperties')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -86,6 +87,22 @@ const OptionsMisc = [
 
 ]
 
+const InstanceProperties = [
+    I_P.VM_$DATA,
+    I_P.VM_$PROPS,
+    I_P.VM_$EL,
+    I_P.VM_$OPTIONS,
+    I_P.VM_$PARENT,
+    I_P.VM_$ROOT,
+    I_P.VM_$CHILDREN,
+    I_P.VM_$SLOTS,
+    I_P.VM_$SCOPED_SLOTS,
+    I_P.VM_$REFS,
+    I_P.VM_$IS_SERVER,
+    I_P.VM_$ATTRS,
+    I_P.VM_$LISTENERS
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -95,5 +112,6 @@ module.exports = {
     OptionsLifecycleHooks,
     OptionsAssets,
     OptionsComposition,
-    OptionsMisc
+    OptionsMisc,
+    InstanceProperties
 } 

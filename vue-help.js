@@ -8,6 +8,7 @@ const ga = api.GlobalAPI
 const od = api.OptionsData
 const odom = api.OptionsDOM
 const olh = api.OptionsLifecycleHooks
+const oa = api.OptionsAssets
 
 V.delimiter('vue-help$').show()
 
@@ -260,3 +261,25 @@ V.command('destroyed', 'Options/Lifecycle Hooks: #destroyed').action(function(ar
     this.log(O.logOptions(w))
     callback()
 })
+
+// Options/Assets
+
+V.command('directives', 'Options/Assets: #directives').action(function(args, callback){
+    const w = oa[0]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('filters', 'Options/Assets: #filters').action(function(args, callback){
+    const w = oa[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('components', 'Options/Assets: #components').action(function(args, callback){
+    const w = oa[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+// Options/Composition

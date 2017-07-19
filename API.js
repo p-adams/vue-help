@@ -3,6 +3,7 @@ const G_API = require('./apis/globalapi')
 const O_D = require('./apis/optionsdata')
 const O_DOM = require('./apis/optionsdom')
 const O_LH = require('./apis/optionslifecyclehooks')
+const O_A = require('./apis/optionsassets')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -60,11 +61,18 @@ const OptionsLifecycleHooks = [
 
 ]
 
+const OptionsAssets = [
+    O_A.DIRECTIVES,
+    O_A.FILTERS,
+    O_A.COMPONENTS
+]
+
 
 module.exports = {
     GlobalConfig,
     GlobalAPI,
     OptionsData,
     OptionsDOM,
-    OptionsLifecycleHooks
+    OptionsLifecycleHooks,
+    OptionsAssets
 } 

@@ -14,6 +14,7 @@ const oc = api.OptionsComposition
 const om = api.OptionsMisc
 const ip = api.InstanceProperties
 const id = api.InstanceData
+const im = api.InstanceEvents
 
 
 V.delimiter('vue-help$').show()

@@ -8,6 +8,7 @@ const O_C = require('./apis/optionscomposition')
 const O_M = require('./apis/optionsmisc')
 const I_P = require('./apis/instanceproperties')
 const I_D = require('./apis/instancedata')
+const I_E = require('./apis/instanceevents')
 
 
 const GlobalConfig = [
@@ -111,6 +112,13 @@ const InstanceData = [
     I_D.VM_$DELETE
 ]
 
+const InstanceEvents = [
+    I_E.VM_$ON,
+    I_E.VM_$ONCE,
+    I_E.VM_$OFF,
+    I_E.VM_$EMIT
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -122,5 +130,6 @@ module.exports = {
     OptionsComposition,
     OptionsMisc,
     InstanceProperties,
-    InstanceData
+    InstanceData,
+    InstanceEvents
 } 

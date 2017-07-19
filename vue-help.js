@@ -10,6 +10,7 @@ const odom = api.OptionsDOM
 const olh = api.OptionsLifecycleHooks
 const oa = api.OptionsAssets
 const oc = api.OptionsComposition
+const om = api.OptionsMisc
 
 V.delimiter('vue-help$').show()
 
@@ -317,6 +318,44 @@ V.command('provide', 'Options/Composition: #provide/inject').action(function(arg
 
 V.command('inject', 'Options/Composition: #provide/inject').action(function(args, callback){
     const w = oc[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+// Options/Misc
+
+V.command('name', 'Options/Misc: #name').action(function(args, callback){
+    const w = om[0]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('delimiters', 'Options/Misc: #delimiters').action(function(args, callback){
+    const w = om[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('functional', 'Options/Misc: #functional').action(function(args, callback){
+    const w = om[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('model', 'Options/Misc: #model').action(function(args, callback){
+    const w = om[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('inheritAttrs', 'Options/Misc: #inheritAttrs').action(function(args, callback){
+    const w = om[4]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('comments', 'Options/Misc: #comments').action(function(args, callback){
+    const w = om[5]
     this.log(O.logOptions(w))
     callback()
 })

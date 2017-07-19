@@ -285,6 +285,24 @@ V.command('components', 'Options/Assets: #components').action(function(args, cal
 
 // Options/Composition
 
+V.command('parent', 'Options/Composition: #parent').action(function(args, callback){
+    const w = oc[0]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('mixins', 'Options/Composition: #mixins').action(function(args, callback){
+    const w = oc[1]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('extends', 'Options/Composition: #extends').action(function(args, callback){
+    const w = oc[2]
+    this.log(O.logOptions(w))
+    callback()
+})
+
 V.command('provide/inject', 'Options/Composition: #provide/inject').action(function(args, callback){
     const w = oc[3]
     this.log(O.logOptions(w))

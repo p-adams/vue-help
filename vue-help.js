@@ -70,67 +70,67 @@ V.command('productionTip', 'Global Config: #productionTip').action(function(args
 
 // Global API
 
-V.command('extend', 'Global API: #Vue.extend(options)').action(function(args, callback){
+V.command('Vue.extend', 'Global API: #Vue.extend(options)').action(function(args, callback){
     const ext = ga[0]
     this.log(LGA.logGlobalAPI(ext))
     callback()
 })
 
-V.command('nextTick', 'Global API: #Vue.nextTick([callback,context])').action(function(args, callback){
+V.command('Vue.nextTick', 'Global API: #Vue.nextTick([callback,context])').action(function(args, callback){
     const nextTick = ga[1]
     this.log(LGA.logGlobalAPI(nextTick))
     callback()
 })
 
-V.command('set', 'Global API: #Vue.set(target,key,value)').action(function(args, callback){
+V.command('Vue.set', 'Global API: #Vue.set(target,key,value)').action(function(args, callback){
     const st = ga[2]
     this.log(LGA.logGlobalAPI(st))
     callback()
 })
 
-V.command('delete', 'Global API: #Vue.delete(target,key)').action(function(args, callback){
+V.command('Vue.delete', 'Global API: #Vue.delete(target,key)').action(function(args, callback){
     const dlt = ga[3]
     this.log(LGA.logGlobalAPI(dlt))
     callback()
 })
 
-V.command('directive', 'Global API: #Vue.directive(id,[definition])').action(function(args, callback){
+V.command('Vue.directive', 'Global API: #Vue.directive(id,[definition])').action(function(args, callback){
     const dir = ga[4]
     this.log(LGA.logGlobalAPI(dir))
     callback()
 })
 
-V.command('filter', 'Global API: #Vue.filter(id,[definition])').action(function(args, callback){
+V.command('Vue.filter', 'Global API: #Vue.filter(id,[definition])').action(function(args, callback){
     const flt = ga[5]
     this.log(LGA.logGlobalAPI(flt))
     callback()
 })
 
-V.command('component', 'Global API: #Vue.component(id,[definition])').action(function(args, callback){
+V.command('Vue.component', 'Global API: #Vue.component(id,[definition])').action(function(args, callback){
     const c= ga[6]
     this.log(LGA.logGlobalAPI(c))
     callback()
 })
 
-V.command('use', 'Global API: #Vue.use(plugin)').action(function(args, callback){
+V.command('Vue.use', 'Global API: #Vue.use(plugin)').action(function(args, callback){
     const u = ga[7]
     this.log(LGA.logGlobalAPI(u))
     callback()
 })
 
-V.command('mixin', 'Global API: #Vue.mixin(mixin)').action(function(args, callback){
+V.command('Vue.mixin', 'Global API: #Vue.mixin(mixin)').action(function(args, callback){
     const m = ga[8]
     this.log(LGA.logGlobalAPI(m))
     callback()
 })
 
-V.command('compile', 'Global API: #Vue.compile(template)').action(function(args, callback){
+V.command('Vue.compile', 'Global API: #Vue.compile(template)').action(function(args, callback){
     const c = ga[9]
     this.log(LGA.logGlobalAPI(c))
     callback()
 })
 
-V.command('version', 'Global API: #Vue.version').action(function(args, callback){
+V.command('Vue.version', 'Global API: #Vue.version').action(function(args, callback){
     const v = ga[10]
     this.log(LGA.logGlobalAPI(v))
     callback()

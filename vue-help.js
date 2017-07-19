@@ -1,6 +1,7 @@
 const V = require('vorpal')()
 const LGC = require('./logfunctions/logglobalconfig')
 const LGA = require('./logfunctions/logglobalapi')
+const LI = require('./logfunctions/loginstance')
 const O = require('./logfunctions/logoptions')
 const api = require('./API')
 const gc = api.GlobalConfig
@@ -12,6 +13,8 @@ const oa = api.OptionsAssets
 const oc = api.OptionsComposition
 const om = api.OptionsMisc
 const ip = api.InstanceProperties
+const id = api.InstanceData
+
 
 V.delimiter('vue-help$').show()
 
@@ -438,5 +441,13 @@ V.command('vm.$attrs', 'Instance Properties: #vm.$attrs').action(function(args, 
 V.command('vm.$listeners', 'Instance Properties: #vm.$listeners').action(function(args, callback){
     const w = ip[12]
     this.log(O.logOptions(w))
+    callback()
+})
+
+// Instance Methods/Data
+
+V.command('vm.$watch', 'Instance Properties: #vm.$watch(expOrFn,callback,[options]').action(function(args, callback){
+    const w = id[0]
+    this.log(LI.logInstance(w))
     callback()
 })

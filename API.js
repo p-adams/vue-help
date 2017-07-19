@@ -7,6 +7,8 @@ const O_A = require('./apis/optionsassets')
 const O_C = require('./apis/optionscomposition')
 const O_M = require('./apis/optionsmisc')
 const I_P = require('./apis/instanceproperties')
+const I_D = require('./apis/instancedata')
+
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -103,6 +105,12 @@ const InstanceProperties = [
     I_P.VM_$LISTENERS
 ]
 
+const InstanceData = [
+    I_D.VM_$WATCH,
+    I_D.VM_$SET,
+    I_D.VM_$DELETE
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -113,5 +121,6 @@ module.exports = {
     OptionsAssets,
     OptionsComposition,
     OptionsMisc,
-    InstanceProperties
+    InstanceProperties,
+    InstanceData
 } 

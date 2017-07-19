@@ -14,6 +14,6 @@ module.exports = {
                     * Details: ${obj.details}
                     ${obj.example ? `* Example: ${obj.example}` : ''} 
                 `
-            )
+        )
     }
 }

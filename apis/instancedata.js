@@ -29,23 +29,66 @@ const VM_$WATCH = {
                         because they reference the same Object/Array.
                         Vue doesn’t keep a copy of the pre-mutate value.`,
     example: `
-                        // keypath
-                        vm.$watch('a.b.c', function (newVal, oldVal) {
-                            // do something
+                        ${colorComment(`// keypath`)}
+                        vm.$watch(${chalk.green(`'a.b.c'`)}, ${chalk.blue(`function`)} (newVal, oldVal) {
+                           ${colorComment(`// do something`)}
                         })
-                        // function
+                        ${colorComment(`// function`)}
                         vm.$watch(
                             function () {
                                 return this.a + this.b
                             },
                             function (newVal, oldVal) {
-                                // do something
+                                ${colorComment(`// do something`)}
                             }
                         )
+                        ${colorArgs(`vm.$watch`)} returns an unwatch function that stops firing the callback:
+                        ${colorArgs(`var`)} unwatch = vm.$watch(${chalk.green(`'a'`)}, cb)
+                        ${colorComment(`// later, teardown the watcher`)}
+                        unwatch()
+
+                        * ${chalk.bold(`Option: deep`)}
+                        To also detect nested value changes inside Objects, you need to pass in ${colorArgs('deep: true')} in the
+                        options argument.
+                        Note that you don’t need to do so to listen for Array mutations.
+
+                        vm.$watch(${chalk.green(`'someObject'`)}, callback, {
+                            deep: ${colorPrimitive(`true`)}
+                        })
+                        vm.someObject.nestedValue =  ${colorPrimitive(`123`)}
+                        ${colorComment(`// callback is fired`)}
+
+                        * ${chalk.bold(`Option: immediate`)}
+                        Passing in ${colorArgs(`immediate: true`)} in the option will trigger the callback immediately
+                        with the current value of the expression:
+                        vm.$watch(${chalk.green(`'a'`)}, callback, {
+                            immediate: ${colorPrimitive(`true`)}
+                        })
+                        ${colorComment(`// callback is fired immediately with current value of 'a'`)}
     `
 }
-const VM_$SET = {}
-const VM_$DELETE = {}
+const VM_$SET = {
+    category: cat,
+    name: 'vm.$set(target,key,value)',
+    arguments: [
+        `{Object | Array) target`,
+        `{string | number} key`,
+        `{any} value`
+    ],
+    returns: `the set value.`,
+    usage: `This is the ${chalk.bold(`alias`)} of the global ${colorArgs(`Vue.set`)}.`
+}
+
+const VM_$DELETE = {
+    category: cat,
+    name: `vm.$delete(target,key)`,
+    arguments:[
+        `{Object | Array} target`,
+        `{string | number} key`
+    ],
+    usage: `This is the ${chalk.bold(`alias`)} of the global ${colorArgs(`Vue.delete`)}.`
+
+}
 
 module.exports = {
     VM_$WATCH,

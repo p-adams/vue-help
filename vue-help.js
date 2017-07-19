@@ -446,8 +446,22 @@ V.command('vm.$listeners', 'Instance Properties: #vm.$listeners').action(functio
 
 // Instance Methods/Data
 
-V.command('vm.$watch', 'Instance Properties: #vm.$watch(expOrFn,callback,[options]').action(function(args, callback){
+V.command('vm.$watch', 'Instance Methods/Data: #vm.$watch(expOrFn,callback,[options])').action(function(args, callback){
     const w = id[0]
     this.log(LI.logInstance(w))
     callback()
 })
+
+V.command('vm.$set', 'Instance Methods/Data: #vm.$set(target,key,value)').action(function(args, callback){
+    const w = id[1]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$delete', 'Instance Methods/Data: #vm.$delete(target,key)').action(function(args, callback){
+    const w = id[2]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+// Instance Methods/Events

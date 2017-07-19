@@ -8,6 +8,7 @@ module.exports = {
                     ${chalk.green('Category:')} ${obj.category}
                     ${chalk.green('Name:')} ${obj.name + '\n'}
                     * Type: ${args(obj.type)}
+                    ${obj.read ? `* ${chalk.bold(obj.read)}`: ''}
                     ${obj.def ? `* Default: ${args(obj.def)}` : ``}
                     ${obj.restrictions ? `* Restrictions: ${obj.restrictions}` : ''}
                     * Details: ${obj.details}

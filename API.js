@@ -4,6 +4,7 @@ const O_D = require('./apis/optionsdata')
 const O_DOM = require('./apis/optionsdom')
 const O_LH = require('./apis/optionslifecyclehooks')
 const O_A = require('./apis/optionsassets')
+const O_C = require('./apis/optionscomposition')
 
 const GlobalConfig = [
    G_C.SILENT,
@@ -67,6 +68,13 @@ const OptionsAssets = [
     O_A.COMPONENTS
 ]
 
+const OptionsComposition = [
+    O_C.PARENT,
+    O_C.MIXINS,
+    O_C.EXTENDS,
+    O_C.PROVIDE_INJECT
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -74,5 +82,6 @@ module.exports = {
     OptionsData,
     OptionsDOM,
     OptionsLifecycleHooks,
-    OptionsAssets
+    OptionsAssets,
+    OptionsComposition
 } 

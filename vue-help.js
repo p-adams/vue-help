@@ -9,6 +9,7 @@ const od = api.OptionsData
 const odom = api.OptionsDOM
 const olh = api.OptionsLifecycleHooks
 const oa = api.OptionsAssets
+const oc = api.OptionsComposition
 
 V.delimiter('vue-help$').show()
 
@@ -283,3 +284,21 @@ V.command('components', 'Options/Assets: #components').action(function(args, cal
 })
 
 // Options/Composition
+
+V.command('provide/inject', 'Options/Composition: #provide/inject').action(function(args, callback){
+    const w = oc[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('provide', 'Options/Composition: #provide/inject').action(function(args, callback){
+    const w = oc[3]
+    this.log(O.logOptions(w))
+    callback()
+})
+
+V.command('inject', 'Options/Composition: #provide/inject').action(function(args, callback){
+    const w = oc[3]
+    this.log(O.logOptions(w))
+    callback()
+})

@@ -15,6 +15,7 @@ const om = api.OptionsMisc
 const ip = api.InstanceProperties
 const id = api.InstanceData
 const im = api.InstanceEvents
+const il = api.InstanceLifecycle
 
 
 V.delimiter('vue-help$').show()
@@ -492,3 +493,27 @@ V.command('vm.$emit', 'Instance Methods/Events: #vm.$delete(event,[...args])').a
 })
 
 // Instance Methods/Lifecycle
+
+V.command('vm.$mount', 'Instance Methods/Lifecycle: #vm.$mount([elementOrSelector])').action(function(args, callback){
+    const w = il[0]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$forceUpdate', 'Instance Methods/Lifecycle: #vm.$forceUpdate()').action(function(args, callback){
+    const w = il[1]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$nextTick', 'Instance Methods/Lifecycle: #vm.$nextTick([callback])').action(function(args, callback){
+    const w = il[2]
+    this.log(LI.logInstance(w))
+    callback()
+})
+
+V.command('vm.$destroy', 'Instance Methods/Lifecycle: #vm.$destroy()').action(function(args, callback){
+    const w = il[3]
+    this.log(LI.logInstance(w))
+    callback()
+})

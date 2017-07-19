@@ -9,6 +9,7 @@ const O_M = require('./apis/optionsmisc')
 const I_P = require('./apis/instanceproperties')
 const I_D = require('./apis/instancedata')
 const I_E = require('./apis/instanceevents')
+const I_L = require('./apis/instancelifecycle')
 
 
 const GlobalConfig = [
@@ -119,6 +120,13 @@ const InstanceEvents = [
     I_E.VM_$EMIT
 ]
 
+const InstanceLifecycle = [
+    I_L.VM_$MOUNT,
+    I_L.VM_$FORCE_UPDATE,
+    I_L.VM_$NEXT_TICK,
+    I_L.VM_$DESTROY
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -131,5 +139,6 @@ module.exports = {
     OptionsMisc,
     InstanceProperties,
     InstanceData,
-    InstanceEvents
+    InstanceEvents,
+    InstanceLifecycle
 } 

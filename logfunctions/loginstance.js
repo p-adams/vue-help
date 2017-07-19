@@ -7,10 +7,10 @@ module.exports = {
                  `
                     ${chalk.green('Category:')} ${obj.category}
                     ${chalk.green('Name:')} ${obj.name + '\n'}
-                    * Arguments (${obj.arguments.length}): 
-                        ${obj.arguments.map((arg, index) => {
+                    ${obj.arguments ? `* Arguments (${obj.arguments.length})` : ''} 
+                        ${obj.arguments ? obj.arguments.map((arg, index) => {
                             return `${index+1}: ${args(arg)} `
-                        }).join(" ")}
+                        }).join(" ") : ''}
                     ${obj.returns ? `* Returns: ${args(obj.returns)}` : ''}
                     * Usage: ${obj.usage}
                     ${obj.example ? `* Example: ${obj.example}` : ''} 

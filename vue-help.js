@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const V = require('vorpal')()
 const figlet = require('figlet')
 const LGC = require('./logfunctions/logglobalconfig')

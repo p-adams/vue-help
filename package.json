@@ -4,13 +4,17 @@
   "description": "Vue.js API in the terminal",
   "main": "vue-help.js",
   "scripts": {
-    "vue-help": "node vue-help.js",
+    //"vue-help": "node vue-help.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/p-adams/vue-help.git"
   },
+  "bin":{
+    "vue-help": "./vue-help.js"
+  },
+  "preferGlobal": true,
   "author": "Paul Adams",
   "license": "ISC",
   "bugs": {

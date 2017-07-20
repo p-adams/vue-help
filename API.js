@@ -10,6 +10,7 @@ const I_P = require('./apis/instanceproperties')
 const I_D = require('./apis/instancedata')
 const I_E = require('./apis/instanceevents')
 const I_L = require('./apis/instancelifecycle')
+const D = require('./apis/directives')
 
 
 const GlobalConfig = [
@@ -127,6 +128,22 @@ const InstanceLifecycle = [
     I_L.VM_$DESTROY
 ]
 
+const Directives = [
+    D.V_TEXT,
+    D.V_HTML,
+    D.V_SHOW,
+    D.V_IF,
+    D.V_ELSE,
+    D.V_ELSE_IF,
+    D.V_FOR,
+    D.V_ON,
+    D.V_BIND,
+    D.V_MODEL,
+    D.V_PRE,
+    D.V_CLOAK,
+    D.V_ONCE
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -140,5 +157,6 @@ module.exports = {
     InstanceProperties,
     InstanceData,
     InstanceEvents,
-    InstanceLifecycle
+    InstanceLifecycle,
+    Directives
 } 

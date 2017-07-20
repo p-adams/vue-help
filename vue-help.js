@@ -2,6 +2,7 @@ const V = require('vorpal')()
 const LGC = require('./logfunctions/logglobalconfig')
 const LGA = require('./logfunctions/logglobalapi')
 const LI = require('./logfunctions/loginstance')
+const LD = require('./logfunctions/logdirectives')
 const O = require('./logfunctions/logoptions')
 const api = require('./API')
 const gc = api.GlobalConfig
@@ -16,6 +17,7 @@ const ip = api.InstanceProperties
 const id = api.InstanceData
 const im = api.InstanceEvents
 const il = api.InstanceLifecycle
+const d = api.Directives
 
 
 V.delimiter('vue-help$').show()
@@ -517,3 +519,72 @@ V.command('vm.$destroy', 'Instance Methods/Lifecycle: #vm.$destroy()').action(fu
     this.log(LI.logInstance(w))
     callback()
 })
+
+// Directives
+
+V.command('v-text', 'Directives: #v-text').action(function(args, callback){
+    this.log(LD.logDirectives(d[0]))
+    callback()
+})
+
+V.command('v-html', 'Directives: #v-html').action(function(args, callback){
+    this.log(LD.logDirectives(d[1]))
+    callback()
+})
+
+V.command('v-show', 'Directives: #v-show').action(function(args, callback){
+    this.log(LD.logDirectives(d[2]))
+    callback()
+})
+
+V.command('v-if', 'Directives: #v-if').action(function(args, callback){
+    this.log(LD.logDirectives(d[3]))
+    callback()
+})
+
+V.command('v-else', 'Directives: #v-else').action(function(args, callback){
+    this.log(LD.logDirectives(d[4]))
+    callback()
+})
+
+V.command('v-else-if', 'Directives: #v-else-if').action(function(args, callback){
+    this.log(LD.logDirectives(d[5]))
+    callback()
+})
+
+V.command('v-for', 'Directives: #v-for').action(function(args, callback){
+    this.log(LD.logDirectives(d[6]))
+    callback()
+})
+
+V.command('v-on', 'Directives: #v-on').action(function(args, callback){
+    this.log(LD.logDirectives(d[7]))
+    callback()
+})
+
+V.command('v-bind', 'Directives: #v-bind').action(function(args, callback){
+    this.log(LD.logDirectives(d[8]))
+    callback()
+})
+
+V.command('v-model', 'Directives: #v-model').action(function(args, callback){
+    this.log(LD.logDirectives(d[9]))
+    callback()
+})
+
+V.command('v-pre', 'Directives: #v-pre').action(function(args, callback){
+    this.log(LD.logDirectives(d[10]))
+    callback()
+})
+
+V.command('v-cloak', 'Directives: #v-cloak').action(function(args, callback){
+    this.log(LD.logDirectives(d[11]))
+    callback()
+})
+
+V.command('v-once', 'Directives: #v-once').action(function(args, callback){
+    this.log(LD.logDirectives(d[12]))
+    callback()
+})
+
+

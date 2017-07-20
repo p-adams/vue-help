@@ -10,7 +10,7 @@ Vue.js API in the Terminal
 
 #### Motivation
 
-vue-help was created to facilitate access to all of Vue's API without the need for a browser or internet connection.
+vue-help was created to facilitate access to all of Vue's APIs without the need for a browser or internet connection.
 
 
 #### Usage

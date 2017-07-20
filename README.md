@@ -2,6 +2,8 @@
 
 Vue.js API in the Terminal
 
+##### up-to-date with Vue 2.4.0
+
 ###### screenshot
 <img
     src="https://image.ibb.co/nAmOVQ/screen_shot.png"

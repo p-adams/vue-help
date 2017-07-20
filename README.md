@@ -1,3 +1,3 @@
 # vue-help
 
-![image](https://{url})
+![image](https://github.com/p-adams/vue-help/tree/master/assets)

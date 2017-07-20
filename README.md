@@ -1,3 +1,3 @@
 # vue-help
 
-![image](https://github.com/p-adams/vue-help/tree/master/assets)
+![image](https://github.com/p-adams/vue-help/blob/master/assets/screen-shot.png)

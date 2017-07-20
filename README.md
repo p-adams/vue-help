@@ -11,4 +11,4 @@ Vue.js API in the Terminal
 ###### screenshot
 <img
     src="https://github.com/p-adams/vue-help/blob/master/assets/screen-shot.png"
-    height="300" width="800"/>
+    height="400" width="800"/>

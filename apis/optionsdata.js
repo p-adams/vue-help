@@ -18,12 +18,16 @@ const DATA = {
                         it is not recommended to observe objects with its own stateful behavior.Once observed, you
                         can no longer add reactive properties to the root data object. It is therefore recommended
                         to declare all root-level reactive properties upfront, before creating the instance. After the
-                        instance is created, the original data object can be accessed as ${colorArgs('vm.$data')}. The Vue instance
-                        also proxies all the properties found on the data object, so ${colorArgs('vm.a')} will be equivalent to
-                        ${colorArgs('vm.$data.a')}. Properties that start with ${colorArgs('_')} or ${colorArgs('$')} will ${chalk.bold('not')} be proxied on the Vue instance because they may conflict
-                        with Vue’s internal properties and API methods. You will have to access them as ${colorArgs('vm.$data._property')}.
+                        instance is created, the original data object can be accessed as ${colorArgs('vm.$data')}.
+
+                        The Vue instance also proxies all the properties found on the data object, so ${colorArgs('vm.a')} will be equivalent to
+                        ${colorArgs('vm.$data.a')}. Properties that start with ${colorArgs('_')} or ${colorArgs('$')} will ${chalk.bold('not')}
+                        be proxied on the Vue instance because they may conflict with Vue’s internal properties and API methods.
+                        You will have to access them as ${colorArgs('vm.$data._property')}.
+
                         When defining a ${chalk.bold('component')}, ${colorArgs('data')} must be declared as a function that returns the initial data object,
                         because there will be many instances created using the same definition.
+                        
                         If we still use a plain object for ${colorArgs('data')}, that same object will be ${chalk.bold('shared by reference')}
                         across all instances created! By providing a ${colorArgs('data')} function, every time a new instance is created, we can simply
                         call it to return a fresh copy of the initial data. If required, a deep clone of the original object can be

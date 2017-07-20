@@ -79,7 +79,7 @@ const TRANSITION = {
 
                         ${colorComment(`<!-- simple element -->`)}
                         ${chalk.blue(`<transition>
-                            <div v-if=${chalk.green(`"ok"`)}>${chalk.black(`toggled content`)}</div>
+                            <div v-if=${chalk.green(`"ok"`)}>${chalk.cyan(`toggled content`)}</div>
                         </transition>
 
                         ${colorComment(`<!-- dynamic component -->`)}
@@ -90,7 +90,7 @@ const TRANSITION = {
                         ${colorComment(`<!-- event hooking -->`)}
                         <div id=${chalk.green(`"transition-demo"`)}>
                             <transition @after-enter=${chalk.green(`"transitionComplete"`)}>
-                                <div v-show=${chalk.green(`"ok"`)}>${chalk.black(`toggled content`)}</div>
+                                <div v-show=${chalk.green(`"ok"`)}>${chalk.cyan(`toggled content`)}</div>
                             </transition>
                         </div>`)}
 
@@ -135,7 +135,7 @@ const TRANSITION_GROUP = {
 
                         ${chalk.blue(`<transition-group tag=${chalk.green(`"ul"`)} name=${chalk.green(`"slide"`)}>
                             <li v-for=${chalk.green(`"item in items"`)} :key=${chalk.green(`"item.id"`)}>
-                                ${chalk.black(`{{ item.text }}`)}
+                                ${chalk.cyan(`{{ item.text }}`)}
                             </li>
                         </transition-group>`)}
     `

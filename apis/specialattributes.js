@@ -21,7 +21,7 @@ const KEY = {
                         The most common use case is combined with ${colorArgs(`v-for`)}:
 
                         ${chalk.blue(`<ul>
-                            <li v-for=${chalk.green(`"item in items" :key="item.id"`)}>${chalk.black(`...`)}</li>
+                            <li v-for=${chalk.green(`"item in items" :key="item.id"`)}>${chalk.cyan(`...`)}</li>
                         </ul>`)}
 
                         It can also be used to force replacement of an element/component instead of reusing it.
@@ -32,7 +32,7 @@ const KEY = {
     `,
     example:`
                         ${chalk.blue(`<transition>
-                            <span :key=${chalk.green(`"text"`)}>${chalk.black(`{{ text }}`)}</span>
+                            <span :key=${chalk.green(`"text"`)}>${chalk.cyan(`{{ text }}`)}</span>
                         </transition>`)}
 
                         When ${colorArgs(`text`)} changes, the ${colorArgs(`<span>`)} will always be replaced instead of patched,
@@ -49,7 +49,7 @@ const REF = {
                         if used on a child component, the reference will be component instance:
 
                         ${colorComment(`<!-- vm.$refs.p will be the DOM node -->`)}
-                        ${chalk.blue(`<p ref=${chalk.green(`"p"`)}>${chalk.black(`hello`)}</p>
+                        ${chalk.blue(`<p ref=${chalk.green(`"p"`)}>${chalk.cyan(`hello`)}</p>
                         ${colorComment(`<!-- vm.$refs.child will be the child comp instance -->`)}
                         <child-comp ref=${chalk.green(`"child"`)}></child-comp>`)}
 

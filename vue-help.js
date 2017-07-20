@@ -23,7 +23,7 @@ const d = api.Directives
 const sa = api.SpecialAttributes
 const bc = api.BuiltInComponents
 
-// brief about intro screen
+
 figlet('vue - help', 'Standard', (err, data) => {
     if(err){
         console.log(err)

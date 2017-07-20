@@ -15,9 +15,9 @@ const V_TEXT = {
     details: `Updates the element’s ${colorArgs(`textContent`)}. If you need to update
                         the part of ${colorArgs(`textContent`)}, you should use ${colorArgs(`{{ Mustache }}`)} interpolations.`,
     example: `
-                        ${chalk.blue(`<span v-text=${chalk.green(`"msg"`)}></span>
+                        ${chalk.blue(`<span v-text=${chalk.green(`"msg"`)}></span>`)}
                             ${colorComment(`<!-- same as -->`)}
-                        <span>${chalk.black(`{{msg}}`)}</span>`)}
+                       ${chalk.blue(`<span>${chalk.cyan(`{{msg}}`)}</span>`)}
     `
 }
 const V_HTML = {
@@ -65,10 +65,10 @@ const V_ELSE = {
     restriction: `previous sibling element must have ${colorArgs('v-if')} or ${colorArgs(`v-else-if`)}`,
     usage: `Denote the “else block” for ${colorArgs(`v-if`)} or a ${colorArgs(`v-if`)}/${colorArgs(`v-else-if`)} chain.
                         ${chalk.blue(`<div v-if=${chalk.green(`"Math.random() > 0.5"`)}>
-                            ${chalk.black(`Now you see me`)}
+                            ${chalk.cyan(`Now you see me`)}
                         </div>
                         <div v-else>
-                            ${chalk.black(`Now you don't`)}
+                            ${chalk.cyan(`Now you don't`)}
                         </div>`)}`
 }
 const V_ELSE_IF = {
@@ -78,16 +78,16 @@ const V_ELSE_IF = {
     restriction: `previous sibling element must have ${colorArgs('v-if')} or ${colorArgs(`v-else-if`)}`,
     usage: `Denote the “else if block” for ${colorArgs(`v-if`)}. Can be chained.
                         ${chalk.blue(`<div v-if=${chalk.green(`"type === 'A'"`)}>
-                            ${chalk.black(`A`)}
+                            ${chalk.cyan(`A`)}
                         </div>
                         <div v-else-if=${chalk.green(`"type === 'B'"`)}>
-                            ${chalk.black(`B`)}
+                            ${chalk.cyan(`B`)}
                         </div>
                         <div v-else-if=${chalk.green(`"type === 'C'"`)}>
-                            ${chalk.black(`C`)}
+                            ${chalk.cyan(`C`)}
                         </div>
                         <div v-else>
-                            ${chalk.black(`Not A/B/C`)}
+                            ${chalk.cyan(`Not A/B/C`)}
                         </div>`)}
     `
 }
@@ -101,7 +101,7 @@ const V_FOR = {
                         for the current element being iterated on:
 
                         ${chalk.blue(`<div v-for=${chalk.green(`"item in items"`)}>
-                            ${chalk.black(`{{ item.text }}`)}
+                            ${chalk.cyan(`{{ item.text }}`)}
                         </div>`)}
                         
                         Alternatively, you can also specify an alias for the index
@@ -116,7 +116,7 @@ const V_FOR = {
                         provide an ordering hint with the ${colorArgs(`key`)} special attribute:
 
                         ${chalk.blue(`<div v-for=${chalk.green(`"item in items" :key="item.id"`)}>
-                            ${chalk.black(`{{ item.text }}`)}
+                            ${chalk.cyan(`{{ item.text }}`)}
                         </div>`)}
 
                         When used together with v-if, v-for has a higher priority than v-if.
@@ -276,7 +276,7 @@ const V_PRE = {
                         You can use this for displaying raw mustache tags. Skipping large
                         numbers of nodes with no directives on them can also speed up compilation.`,
     example: `
-                        ${chalk.blue(`<span v-pre>${chalk.black(`{{ this will not be compiled }}`)}</span>`)}
+                        ${chalk.blue(`<span v-pre>${chalk.cyan(`{{ this will not be compiled }}`)}</span>`)}
     `
 }
 const V_CLOAK = {
@@ -293,7 +293,7 @@ const V_CLOAK = {
                         }
 
                         ${chalk.blue(`<div v-cloak>
-                            ${chalk.black(`{{ message }}`)}
+                            ${chalk.cyan(`{{ message }}`)}
                         </div>`)}
 
                         The ${colorArgs(`<div>`)} will not be visible until the compilation is done.
@@ -310,17 +310,17 @@ const V_ONCE = {
                         This can be used to optimize update performance.
 
                         ${colorComment(`<!-- single element -->`)}
-                        ${chalk.blue(`<span v-once>${chalk.black(`This will never change: {{msg}}`)}</span>
+                        ${chalk.blue(`<span v-once>${chalk.cyan(`This will never change: {{msg}}`)}</span>
                         ${colorComment(`<!-- the element have children -->`)}
                         <div v-once>
-                        <h1>${chalk.black(`comment`)}</h1>
-                        <p>${chalk.black(`{{msg}}`)}</p>
+                        <h1>${chalk.cyan(`comment`)}</h1>
+                        <p>${chalk.cyan(`{{msg}}`)}</p>
                         </div>
                         ${colorComment(`<!-- component -->`)}
                         <my-component v-once :comment=${chalk.green('"msg"')}></my-component>
                         ${colorComment(`<!-- v-for directive -->`)}
                         <ul>
-                            <li v-for=${chalk.green(`"i in list"`)} v-once>${chalk.black(`{{i}}`)}</li>
+                            <li v-for=${chalk.green(`"i in list"`)} v-once>${chalk.cyan(`{{i}}`)}</li>
                         </ul>`)}`
 }
 

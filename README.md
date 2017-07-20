@@ -22,11 +22,39 @@ vue-help was created to facilitate access to all of Vue's API without the need f
 
 ##### Start CLI
 
-`npm vue-help`
+`vue-help`
 
 ##### Enter API name at the prompt
 
-For example, `vue
+For example:
+
+```
+    vue-help$ devtools
+
+                    Category: Global Config
+                    Name: devtools
+
+                    * Type: boolean
+                    * Default: true ( false in production builds)
+                    * Usage: // make sure to set this synchronously immediately after loading Vue
+                            Vue.config.devtools = true
+                    * Details: Check whether to allow vue-devtools inspection.
+                            This option's default value is true in development builds and false in production builds.
+                            You can set it to true to enable inspection for production builds
+
+```
+
+
+
+##### or enter help to list all commands
+
+`vue-help? help`
 
 
 #### Inspiration
+
+Clojure's `(doc name)` function
+https://clojuredocs.org/clojure.repl/doc
+
+Elixir's `h/1` function
+https://hexdocs.pm/iex/IEx.Helpers.html

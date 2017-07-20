@@ -1,6 +1,6 @@
 {
   "name": "vue-help",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Vue.js API in the terminal",
   "main": "vue-help.js",
   "scripts": {
@@ -23,9 +23,7 @@
   "homepage": "https://github.com/p-adams/vue-help#readme",
   "dependencies": {
     "vorpal": "^1.12.0",
-    "figlet": "^1.2.0"
-  },
-  "devDependencies": {
-    "chalk": "^2.0.1"
+    "figlet": "^1.2.0",
+     "chalk": "^2.0.1"
   }
 }

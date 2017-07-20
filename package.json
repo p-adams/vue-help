@@ -1,10 +1,10 @@
 {
   "name": "vue-help",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue.js API in the terminal",
   "main": "vue-help.js",
   "scripts": {
-    //"vue-help": "node vue-help.js",
+    "vue-help": "node vue-help.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

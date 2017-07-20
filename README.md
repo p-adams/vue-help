@@ -4,7 +4,7 @@ Vue.js API in the Terminal
 
 ###### screenshot
 <img
-    src="https://github.com/p-adams/vue-help/blob/master/assets/screen-shot.png"
+    src="https://ibb.co/jL1CPk"
     height="400" width="800"/>
 
 

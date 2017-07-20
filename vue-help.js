@@ -3,6 +3,7 @@ const LGC = require('./logfunctions/logglobalconfig')
 const LGA = require('./logfunctions/logglobalapi')
 const LI = require('./logfunctions/loginstance')
 const LD = require('./logfunctions/logdirectives')
+const LBC = require('./logfunctions/logbuiltincomp')
 const O = require('./logfunctions/logoptions')
 const api = require('./API')
 const gc = api.GlobalConfig
@@ -18,6 +19,8 @@ const id = api.InstanceData
 const im = api.InstanceEvents
 const il = api.InstanceLifecycle
 const d = api.Directives
+const sa = api.SpecialAttributes
+const bc = api.BuiltInComponents
 
 
 V.delimiter('vue-help$').show()
@@ -586,5 +589,57 @@ V.command('v-once', 'Directives: #v-once').action(function(args, callback){
     this.log(LD.logDirectives(d[12]))
     callback()
 })
+
+// Special Attributes
+
+V.command('key', 'Special Attributes: #key').action(function(args, callback){
+    this.log(LD.logDirectives(sa[0]))
+    callback()
+})
+
+V.command('ref', 'Special Attributes: #ref').action(function(args, callback){
+    this.log(LD.logDirectives(sa[1]))
+    callback()
+})
+
+V.command('slot', 'Special Attributes: #slot').action(function(args, callback){
+    this.log(LD.logDirectives(sa[2]))
+    callback()
+})
+
+V.command('is', 'Special Attributes: #is').action(function(args, callback){
+    this.log(LD.logDirectives(sa[3]))
+    callback()
+})
+
+// Built-In Components
+
+V.command('component', 'Built-In Components: #component').action(function(args, callback){
+    this.log(LBC.logBuiltInComp(bc[0]))
+    callback()
+})
+
+V.command('transition', 'Built-In Components: #transition').action(function(args, callback){
+    this.log(LBC.logBuiltInComp(bc[1]))
+    callback()
+})
+
+V.command('transition-group', 'Built-In Components: #transition-group').action(function(args, callback){
+    this.log(LBC.logBuiltInComp(bc[2]))
+    callback()
+})
+
+V.command('keep-alive', 'Built-In Components: #keep-alive').action(function(args, callback){
+    this.log(LBC.logBuiltInComp(bc[3]))
+    callback()
+})
+
+V.command('slot-component', 'Built-In Components: #slot').action(function(args, callback){
+    this.log(LBC.logBuiltInComp(bc[4]))
+    callback()
+})
+
+
+
 
 

@@ -11,6 +11,8 @@ const I_D = require('./apis/instancedata')
 const I_E = require('./apis/instanceevents')
 const I_L = require('./apis/instancelifecycle')
 const D = require('./apis/directives')
+const S_A = require('./apis/specialattributes')
+const B_C = require('./apis/builtincomp')
 
 
 const GlobalConfig = [
@@ -144,6 +146,21 @@ const Directives = [
     D.V_ONCE
 ]
 
+const SpecialAttributes = [
+    S_A.KEY,
+    S_A.REF,
+    S_A.SLOT,
+    S_A.IS
+]
+
+const BuiltInComponents = [
+    B_C.COMPONENT,
+    B_C.TRANSITION,
+    B_C.TRANSITION_GROUP,
+    B_C.KEEP_ALIVE,
+    B_C.SLOT_COMPONENT
+]
+
 
 module.exports = {
     GlobalConfig,
@@ -158,5 +175,7 @@ module.exports = {
     InstanceData,
     InstanceEvents,
     InstanceLifecycle,
-    Directives
+    Directives,
+    SpecialAttributes,
+    BuiltInComponents
 } 
